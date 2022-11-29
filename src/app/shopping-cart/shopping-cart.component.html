@@ -1,0 +1,115 @@
+<ng-container    *ngIf="allKdata.length !=0">
+  
+    <app-user-topbar></app-user-topbar>
+   
+   <div class ="card-table"  *ngFor="let p of allKdata;let i=index">
+     <div class="card-products">
+   
+       <table class="table table-responsive">
+   
+         <thead>
+           <tr>
+             <th>Sr.no</th>
+             <th>Product Name</th>
+             <th>Category</th>
+             <th>Price</th>
+             <th>Image</th>
+             <th> Qty </th>
+             <th>Total</th>
+             <th>Action</th>
+             <th>+ Quantity</th>
+             <th>- Quantity</th>
+   
+   
+           </tr>
+         </thead>
+         <tbody>
+               <tr>
+                 <td>{{i+1}}</td>
+                 <td>{{p.productname}}</td>
+                 <td>{{p.category}}</td>
+                 <td>{{p.price |currency :'INR'}} </td>
+                 <td><img src="{{p.imageUrl}}" style="width:120px;" alt="{{p.description}}"></td>
+                 <td>{{p.quantity}}</td>
+                 <td>{{p.total*p.quantity}}</td>
+                 
+
+
+                 <td><strong>Item total  {{p.total*p.quantity | currency:'INR'}} </strong></td>
+
+                 
+
+                 
+                 <td><button class="btn btn-danger" (click)="emptyCart(p)">Delete this Item</button>
+                   
+                 </td>
+                 <td><button class="btn btn-success" (click)="inc(p)">+</button>&nbsp;
+   
+                 </td>
+   
+               
+               <td><button class="btn btn-danger" (click)="dec(p)">-</button>&nbsp;
+   
+               </td>
+               
+
+               
+           
+
+               </tr>
+               
+
+               
+   
+         </tbody>
+   
+   
+         
+       </table>
+     </div>
+     </div>
+
+
+            <div >
+
+                <tr>
+                    <td  colspan ="4"></td>
+      
+                    <td><button class= "btn btn-danger" (click)="emptyAllCart()">Empty Cart</button></td>&nbsp;
+                    <td><button class= "btn btn-primary" routerLink="/order" >Pay Now</button></td>&nbsp;
+                    <td><button class= "btn btn-success" routerLink="/user">Shop More</button></td>
+                    
+                  </tr>
+            </div>
+                    <div>
+                        <tr> 
+                            <td colspan ="80"></td>
+                            
+                              <td><strong>Grand total{{cartservice.grandTotal}} </strong></td>
+           
+                    </div>
+   
+   </ng-container>
+   
+   <ng-container *ngIf="allKdata.length ==0">
+     
+     <div class ="container">
+     
+       <div class = "card">
+     
+         <h4 class ="card-tittle "></h4>
+       </div>
+     
+         <div class="center">
+     
+           <img src="https://media.istockphoto.com/id/1227011520/vector/real-estate-insurance-concept-background-hands-of-businessman-covering-house-with-care.jpg?s=612x612&w=0&k=20&c=itm4QBqmq46KWWTwelxLzksRBdcAHPltqZ8Y92Ds47Q=" alt="">
+           <h4 >Your Cart is Empty</h4>
+           <h6>Add Items now </h6>
+           <button class="btn btn-primary" routerLink="/user">Shop Now</button>
+     
+         </div>
+     </div>
+     
+     </ng-container>
+   
+   

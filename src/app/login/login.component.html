@@ -1,0 +1,35 @@
+<div  class = "container">
+  <div class="row">
+
+      <div class="class md-6">
+
+          <div class="card">
+
+              <div class="class-center">
+
+                  <h1>e-Pharmacy  App Login </h1>
+
+  </div>
+  <form  #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">User Name</label>
+        <input ngModel type ="text" name="userName" class="form-control" placeholder="Enter your name" id="userName" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text"></div>
+      </div>
+      <div class="mb-3">
+        <label  class="form-label">Password</label>
+        <input ngModel  type="password" name="userPassword" class="form-control" id="userPassword" placeholder="Enter your password" >
+      </div>
+      
+      <button type="submit" class="btn btn-primary" >Login </button>
+    </form>
+
+                  
+                                      <a routerLink = "/sign-in"> New User ? Click to Sign In </a>
+                                  
+                              </div>
+                          </div>
+                      </div>
+
+
+  

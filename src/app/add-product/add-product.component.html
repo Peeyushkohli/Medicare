@@ -1,0 +1,87 @@
+<div class="row">
+
+    <h1 >Add New Product</h1>
+</div>
+<div class ="col-md-6" offset="3">
+
+    <table class="table mt-4">
+        <thead>
+
+            <tr>
+                    <th scope ="col">Product Name</th>
+                    <th scope ="col">Category</th>
+                    <th scope ="col">Available Qty</th> 
+                    <th scope ="col">Price</th>
+                    <th scope ="col">Image Name</th>
+                    <th scope ="col">Description</th>
+                    <th scope ="col">Seller</th>
+                    <th scope ="col">Expiry</th>
+                    
+                    
+
+
+            </tr>
+        
+        </thead>
+
+
+
+    </table>
+    <tbody>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form  [formGroup] = "formValue">
+          <div class="mb-3">
+            <label for="InputProductName" class="form-label">Product Name</label>
+            <input type="text" formControlName="productname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text"></div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputCategory" class="form-label">Category</label>
+            <input type="text" formControlName ="category"class="form-control" id="category">
+          </div>
+          <div class="mb-3">
+              <label for="exampleInputQuantityAvaialble" class="form-label">Avaialble Quantity</label>
+              <input type="text" formControlName ="availablequantity" class="form-control" id="aq">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputCategory" class="form-label">Price</label>
+              <input type="text" formControlName ="price" class="form-control" id="price">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputCategory" class="form-label">Image</label>
+              <input type="text" formControlName ="imageUrl" class="form-control" id="Image">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputCategory" class="form-label">Description</label>
+              <input type="text" formControlName ="price" class="form-control" id="price">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputCategory" class="form-label">Seller</label>
+              <input type="text" formControlName ="price" class="form-control" id="price">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputCategory" class="form-label">Expiry</label>
+              <input type="text" formControlName ="price" class="form-control" id="price">
+            </div>
+                   </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+      

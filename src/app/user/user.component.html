@@ -1,0 +1,68 @@
+<div class ="cart-top container-fluid ">
+
+  <div class="container d-flex">
+      <div class="Item">
+        <button class="button btn btn-primary"(click)="filter('')">
+          <img src="" alt ="">
+          <h6>All  </h6>
+        </button>&nbsp;
+      </div>
+      <div class="Item">
+        <button class="button btn btn-primary"(click)="filter('Appliance')">
+          <img src="" alt ="">
+          <h6>Appliance </h6>
+        </button>&nbsp;     
+       </div>
+      <div class="Item">
+        <button class="button btn btn-primary"(click)="filter('Babycare')">
+          <img src="" alt ="">
+          <h6>Babycare</h6>
+        </button>&nbsp;
+      </div>
+      <div class="Item">
+        <button class="button btn btn-primary"(click)="filter('Antipyretic')">
+          <img src="" alt ="">
+          <h6>Antipyretic</h6>
+        </button>&nbsp;
+      </div>
+
+
+  </div>
+</div>
+
+  <div class = "container">
+    <div class = "row">
+    <ng-container *ngFor="let p of filterCategory  | filter :searchKey :'category'">
+
+      <div class ="card col-md-3">
+        <img src="{{p.imageUrl}}" alt="">
+        <h5>{{p.productname}}</h5>
+        <p><strong>Category></strong>{{p.category}}</p>
+        <p><strong>Price Rs.</strong>{{p.price}}</p>
+        <p><strong>Quantity </strong>{{p.quantity}}</p>
+        <p><strong>Total Rs.</strong>{{p.total}}</p>
+        
+        
+
+        <button class="btn btn-primary" (click)="addToCart(p)" >Add to Cart</button>
+
+
+
+      </div>
+    </ng-container>
+    
+
+  </div>
+                
+  </div>
+
+
+
+
+
+
+       
+
+      
+
+  

@@ -1,0 +1,110 @@
+<nav class="navbar navbar -light bg-primary">
+
+  <div class="container- fluid">
+    <h2>e-Pharmacy </h2>
+    <button (click)="clickAddKProduct()" type="button" class="btn btn-info btn-lg" (click)="openModal()">Add New Product</button>
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">New Product </h4>
+            <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
+                aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="formValue">
+              <div class="mb-3">
+                <label for="InputProductName" class="form-label">Product Name</label>
+                <input type="text" formControlName="productname" class="form-control" id="exampleInputEmail1"
+                  aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text"></div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputCategory" class="form-label">Category</label>
+                <input type="text" formControlName="category" class="form-control" id="category">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputQuantityAvaialble" class="form-label">Avaialble Quantity</label>
+                <input type="text" formControlName="availablequantity" class="form-control" id="aq">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputCategory" class="form-label">Price</label>
+                <input type="text" formControlName="price" class="form-control" id="price">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputCategory" class="form-label">Image</label>
+                <input type="text" formControlName="imageUrl" class="form-control" id="Image">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputCategory" class="form-label">Description</label>
+                <input type="text" formControlName="description" class="form-control" id="description">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputCategory" class="form-label">Seller</label>
+                <input type="text" formControlName="seller" class="form-control" id="seller">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputCategory" class="form-label">Expiry</label>
+                <input type="text" formControlName="expiry" class="form-control" id="expiry">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
+            <button *ngIf="showAdd" class="btn btn-primary" (click)="addKProduct()">Add Product</button>
+            <button *ngIf="showBtn" type="button" class="btn btn-primary"(click)="updateKProduct()">Update Product</button>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</nav>
+<table class=" table table-bordered table-stripped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Available Qty</th>
+      <th scope="col">Price</th>
+      <th scope="col">Image</th>
+      <th scope="col">Description</th>
+      <th scope="col">Seller</th>
+      <th scope="col">expiry</th>
+
+
+
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let p of allKdata">
+      <td>{{p.id}}</td>
+      <td>{{p.productname}}</td>
+      <td>{{p.category}}</td>
+      <td>{{p.availablequantity}}</td>
+      <td>{{p.price}}</td>
+      <td><img src="{{p.imageUrl}}" style="width:60px;" alt=""></td>
+
+      <td>{{p.description}}</td>
+      <td>{{p.seller}}</td>
+      <td>{{p.expiry}}</td>
+
+
+
+
+
+      <td>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        (click)="openModal()" (click)="onEditKProduct(p)">Edit</button>&nbsp;
+        <button class="btn btn-danger " (click)="delKproduct(p.id)"><i class="fas fa-trash"></i>Del</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

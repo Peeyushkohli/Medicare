@@ -1,0 +1,31 @@
+.card{
+    margin-top: 15px;
+    border: 1px  solid brown;
+    width: 550px;
+    padding :45px;
+    position: absolute;
+    top :15%;
+    left : 35%
+
+}
+     ul{
+        display: flex;
+        justify-content: center;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        list-style-type: none;
+        padding: auto;
+        flex-direction:row-reverse;
+        opacity: 0 9; 
+        cursor: pointer
+
+
+
+}
+
+ul :hover{
+    opacity: 0 9; 
+    cursor: pointer;
+    
+
+}

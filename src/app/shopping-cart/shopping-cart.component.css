@@ -1,0 +1,51 @@
+.card-tittle{
+
+    margin-top: 10%;
+    left :80%
+}
+
+
+.center{
+
+    top:50%;
+    left:50%;
+    transform: none;
+    translate :(-45% ,-45%);
+    text-align:center;
+    position: absolute;
+}
+
+.card{
+
+    height:20vh;
+    margin: 25px;
+    padding: 25px;
+}
+
+
+.center img{
+
+    color:blue;
+    border:none;
+    outline: none;
+    height: 75px;
+    text-decoration: none;
+    margin: 20px 0px;
+}
+
+.card-table{
+
+    display:flex;
+    min-width: none;
+    position: relative;
+    word-wrap: break-word;
+    background-color: white;
+    border :1px solid;
+    border-radius: 3pt;
+}
+
+img{
+    border-radius:50rem ;
+    object-fit: cover;
+}
+

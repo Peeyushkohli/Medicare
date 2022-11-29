@@ -1,0 +1,27 @@
+h1
+
+{
+    color :blue
+
+}
+a {
+    color :aliceblue
+}
+
+
+.form-control {
+
+    border-radius: 5px;
+    margin-left: 25px;
+    width: 300px;
+}
+
+.search-icon{
+
+    z-index: 10;
+    position: absolute;
+    right: 41%;
+    color: blue;
+    top: 31%;
+}
+ 
